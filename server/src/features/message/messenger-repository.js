@@ -24,7 +24,6 @@ await message.save();
          return populateMsgObject;
        }
 
-    // return populateMsg;
     }catch(err){
         console.log("postMessage repository Error : ",err);
         throw new ErrorHandler("something went wrong with database.",500);

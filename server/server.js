@@ -1,3 +1,7 @@
+// MIT License
+// Copyright (c) 2025 Prawin-736
+// See LICENSE file for more information
+
 import dotenv from "dotenv";
 dotenv.config();
 import express from "express";

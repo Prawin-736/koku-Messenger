@@ -1,0 +1,516 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+.full-height{
+    height: 100vh;
+}
+
+ /*--------- !!!!!!!!!!!!!! common-class !!!!!!!!!!!!!!!!! */
+
+.circle-image-fit{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*---------!!!!!!!!!!!!!!!!!  common-class !!!!!!!!!!!!!!!!-----*/
+
+/* ----------------------!!!!!!!!!!!!!!!!!!!background and color setting!!!!!!!!!!!!!! */
+
+/* ----------default mode */
+
+.background-white{
+  background-color: white;
+}
+.background-info-bg-subtle{
+  background-color: #cff4fc
+}
+/* default font color */
+.font-color-black{
+  color: #212529;
+}
+
+/* -----------------------------default mode --------------------- */
+
+/*----------------- bootstrap dark theme custom color setup */
+
+[data-bs-theme="dark"] .background-white {
+  background-color: #212529;
+  /* border: #343a40 solid 1px; */
+}
+
+[data-bs-theme="dark"] .background-info-bg-subtle {
+  background-color: #121212; 
+}
+
+[data-bs-theme="dark"] .font-color-black{
+  color: white;
+}
+
+[data-bs-theme="dark"] #navbar-logo__icon {
+    filter: brightness(0) invert(1) ;
+}
+
+[data-bs-theme="dark"] .dropdown-icon{
+    filter: brightness(0) invert(1) ;
+}
+
+[data-bs-theme="dark"] .dropdown-item:hover {
+  background-color: #343a40 !important;
+}
+
+[data-bs-theme="dark"] .collapse-count{
+  border-color: white !important;
+}
+
+/*----------------- bootstrap dark theme custom color setup ----------------------------*/
+
+/* ----------------------!!!!!!!!!!!!!!!!!!!background and color setting!!!!!!!!!!!!!! -----------------------*/
+
+
+
+
+/* ----------!!!!!!!!!!!!!! left side*/
+
+/* ----------!!!!!!!!!!!!!! welcome tray */
+
+.welcome-left-tray{
+    padding: .5rem;
+    border-radius: 1rem;
+    height: 4rem;
+    }
+
+  .navbar-user__dp{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) ;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-user__dp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+   box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) ;
+
+}  
+
+  .username {
+    font-size: 1.2rem;
+      font-weight: 600;
+      margin-left: 2px;
+   color: #0d6efd;  
+  }
+
+  /*--------- typing indicator */
+.typing-pic{
+width: 2rem;
+height: 2rem;
+border-radius: 50%;
+overflow: hidden; 
+}
+/*--------- typing indicator------------ */
+
+/*-------------- dynamic dropdown */
+
+  #dynamic-dropdown{
+    margin-left: auto;
+  }
+
+/*------------- dynamic dropdown----------------*/
+
+@media screen and (max-width: 768px) {
+
+    .username {
+        font-size: 1.1rem;
+    }  
+
+    .welcome-message{
+              font-size: 1.1rem !important;  
+    }
+
+    #typing-indicator-name{
+        display: none !important;
+    }
+
+    .user-typing-indicator{
+margin-right: auto;     }
+
+#dynamic-dropdown{
+  margin-left: 0 !important;
+  }
+
+}
+/* ----------!!!!!!!!!!!!!! welcome tray !!!!!!!!!!!!!!!!----------- */
+
+/* ---------- !!!!!!!!!!!!!!!! message body container!!!!!!!!!!!!!!!!! (only checked messae body)*/
+.message-body{ 
+    padding: 1rem;
+    height: 70vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+/* message body common for both send & reciver*/
+.send-receive-msg-container{
+    min-height: 1rem;
+    max-height: auto;
+    width: 50%;
+    margin-bottom: 1rem; 
+    margin-left: auto;
+  }
+  
+  .chat-circle{
+   width: 2.5rem;
+    height: 2.5rem;
+    background-color:white ;
+    border-radius: 50%;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) ;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chat-circle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+   box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) ;
+  }
+
+
+  
+  .sender-msg{
+     height: auto;
+     min-width: 6rem;
+     width: auto;
+     max-width: 85%;
+     color:white;
+     background-color: #0d6efd;
+     border-radius: .4rem;
+     text-align: justify;
+  }
+  
+  
+  
+  .receive-msg{
+      height: auto;
+      min-width: 6rem;
+       width: auto;   
+       max-width: 80%;
+      background-color:#e9ecef;
+      border-radius: .4rem;
+        max-width: 100%;           /* Ensures the message box doesn’t overflow its parent */
+  word-wrap: break-word;     /* Forces long words or strings (like URLs) to break */
+  white-space: normal;    
+  }
+  
+  @media (max-width:992px){
+      .send-receive-msg-container{
+          width: 100%;
+      }   
+  }
+  .date-time div{
+      font-size: small;
+  }
+  .date-time {
+      font-size: small;
+  }
+  
+  .user-name{
+      font-weight:bolder;
+  }
+
+  /* ---------- message body container -------------------*/
+
+  /* --------------- message-input */
+.message-input-container{
+    padding: .5rem 1rem 1rem 1rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+
+#message-input{
+    width: 89%;
+    height: 2.5rem;
+    padding: 1rem;
+    outline: none;
+    border:0;
+    border-radius: .5rem;
+}
+#message-input:focus{
+   border: 2px solid #0d6efd !important;
+}
+
+#message-submit-button{
+    width: 13%;
+}
+
+@media screen and (min-width: 769px) {
+    #Submit {
+        display: inline;
+    } 
+  
+}
+
+/* --------------- message-input ---------------- */
+
+/* ----------!!!!!!!!!!!!!! left side !!!!!!!!!!!!!!!!!!--------------*/
+
+/* ----------!!!!!!!!!!!!!! right side !!!!!!!!!!!!!!!!!!
+
+/* display picture common */
+/* .display-picture { 
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    overflow: hidden;
+     box-shadow: 0px 0px 4px black;
+
+} */
+
+.welcome-right-tray{
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
+
+.main-online-circle{
+    width: 1rem;
+    height: 1rem;
+    background-color: #198754;
+    border-radius: 50%;
+}
+.main-offline-circle{
+    width: 1rem;
+    height: 1rem;
+    background-color:#dc3545;
+    border-radius: 50%;
+}
+
+/* ----------!!!!!!!!!!!!!! right side !!!!!!!!!!!!!!!!!!--------------*/
+
+
+
+
+
+
+
+
+/* .display-picture img, */
+.posting__dp img,.comment__dp{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+   box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) ;
+
+}  
+
+
+/* ---------- left side - welcome tray ------------- */
+
+
+
+
+
+/*------ !! online users and offline user section */
+
+/* ---common section */
+
+.users-container{
+    padding: .65rem;
+    border-radius: 1rem;
+    min-height: 8vh;
+    max-height: 42vh;
+}
+
+.users-list{
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.offline-user-count,.online-user-count{
+    border: #000000 solid 1px;
+     width: 1.6rem; 
+     height: 1.6rem; 
+     border-radius: 50%;
+    margin-left:.5rem;
+}
+
+[data-bs-theme="dark"] .offline-user-count{
+    filter: brightness(0) invert(1) ;
+}
+
+[data-bs-theme="dark"] .online-user-count{
+    filter: brightness(0) invert(1) ;
+}
+
+.UserDp { 
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    overflow: hidden;
+     box-shadow: 0px 0px 4px black;
+}
+
+    .UserDp img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+   box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) ;
+    overflow: hidden;
+} 
+/* ---common section----- */
+
+/* ----online user section */
+
+.online-user{
+    height: 3.3rem;
+    width: auto;
+    margin-bottom: .35rem;
+}
+
+.onlineUserDp { 
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    overflow: hidden;
+     box-shadow: 0px 0px 4px black;
+}
+
+    .onlineUserDp img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+   box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) ;
+    overflow: hidden;
+} 
+
+.user-online-circle{
+    width: 1rem;
+    height: 1rem;
+    background-color: #198754;
+    border-radius: 50%;
+}
+/* ----online user section---------- */
+/* ----------offline user section */
+.offline-user{
+    height: 3.3rem;
+    width: auto;
+    margin-bottom: .35rem;
+}
+
+.offline-user{
+    padding: 1rem;
+    background-color: white;
+    border-radius: 1rem;
+    min-height: 8vh;
+    max-height: 42vh;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.user-offline-circle{
+    width: 1rem;
+    height: 1rem;
+    background-color:#dc3545;
+    border-radius: 50%;
+}
+/* ----------offline user section------------*/
+
+
+/* ----------------right-side - online & offline container -------------*/
+
+
+
+
+/* -------------dropdown */
+
+.dropdown-item:hover {
+    background-color: transparent !important;
+
+}
+
+/* hover primary */
+.hover-primary:hover small{
+    color: #0d6efd !important;
+    text-decoration: underline;
+}
+.hover-primary:hover img{
+    filter: invert(22%) sepia(48%) saturate(5580%) hue-rotate(219deg) brightness(111%) contrast(98%); ;
+}
+
+/* hover danger */
+.dropdown__logout:hover small{
+    color: #dc3545 !important;
+    text-decoration: underline;
+    
+}
+.dropdown__logout:hover img {
+    filter: invert(33%) sepia(83%) saturate(2132%) hue-rotate(332deg) brightness(86%) contrast(101%);
+}
+
+/* removing default settings like bluew and underline from default settings */
+.collapse-iteam{
+    background-color: transparent !important;
+    color: #000000;
+    text-decoration: none;
+}
+
+.collapse-count{
+    border-width: 1px;
+    border-color: #000000 !important;
+}
+
+
+
+/* setting pointer for all the options in dropdown to avoid text seleciton cursor */
+.dropdown-menu {
+    user-select: none;
+  }
+  
+  .dropdown-menu * {
+    cursor: default;
+  }
+  
+  .dropdown-menu a,
+  .dropdown-menu button,
+  .dropdown-menu input,
+  .dropdown-menu label {
+    cursor: pointer;
+  }
+
+  /* -------------dropdown---------------- */
+  
+  

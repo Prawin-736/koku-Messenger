@@ -1,9 +1,6 @@
 import { capitalizeFirstTwoCharacter,dp_background_setter } from "./display-picture.middleware.js";
 
 
-
-
-
 const socket = io.connect("http://localhost:5300");
 
 

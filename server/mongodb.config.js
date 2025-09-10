@@ -12,7 +12,7 @@ export const mongooseConnect = async () => {
       dbName: dbName,
     });
 
-    console.log('mongoose is connected to localHost 3000..');
+    console.log(`mongoose is connected to localHost ${config.port}..`);
   } catch (err) {
     console.log(err);
   }

@@ -15,7 +15,7 @@ import { mongooseConnect } from "./mongodb.config.js";
 import { checkS3Connection } from "./aws/checkS3Connection.js";
 import UserRepository from './src/features/user/user-repository.js';
 import { startExpiredUserChecker } from "./src/middleware/checkExpiredUsers.js";
-
+import { config } from "./config.js";
  const userRepository = new UserRepository();
 
 // setting this to get absoulte path
@@ -128,8 +128,8 @@ app.use((req, res) => {
   });
 });
 
-server.listen(5300,()=>{
-    console.log("server is listening in local host 3300..");
+server.listen(config.port,()=>{
+    console.log(`server is listening in local host ${config.port}..`);
     mongooseConnect();
     checkS3Connection();
 });

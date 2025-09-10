@@ -1,8 +1,18 @@
 import { capitalizeFirstTwoCharacter,dp_background_setter } from "./display-picture.middleware.js";
+import { config } from "../../../server/config.js";
 
+//local host to connect
+ const SOCKET_URL = config.SOCKET_URL;
+ // dynamicaly adding this script tag
+    const socketScript = document.createElement('script');
+    socketScript.src = `${SOCKET_URL}/socket.io/socket.io.js`;
 
-const socket = io.connect("http://localhost:5300");
+    document.head.appendChild(socketScript);
 
+      // Run after the script is fully loaded
+    socketScript.onload = function () {
+
+const socket = io.connect(SOCKET_URL);
 
 // SignIn userDetail adding the current user
 const signInUserDetail = async()=>{
@@ -296,7 +306,7 @@ offlineUsersio();
   //-------------logout signOut
 const logoutSection = ()=>{
 
-document.addEventListener("DOMContentLoaded",()=>{
+// document.addEventListener("DOMContentLoaded",()=>{
 
 document.addEventListener("click",async(event)=>{
   const logoutButton = event.target.closest("#user-logout");
@@ -320,7 +330,7 @@ document.addEventListener("click",async(event)=>{
 
 });
 
-})
+// })
 }
 logoutSection();
 
@@ -523,6 +533,6 @@ const timeStamp = formatDate(time);
 
 }
 postMessage();
-
+    }
 
 

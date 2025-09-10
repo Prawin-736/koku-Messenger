@@ -16,7 +16,7 @@ console.log("checking aws region 1 : "+process.env.AWS_REGION);
 
 export const config = {
     env: process.env.NODE_ENV || 'development',
-
+    port:process.env.PORT,
     jwt: {
         secretKey: process.env.JWT_SECRETKEY
     },

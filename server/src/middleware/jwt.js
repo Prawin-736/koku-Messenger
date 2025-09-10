@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-dotenv.config();
+
+import { config } from '../../config.js';
 import jwt from 'jsonwebtoken';
 import UserRepository from '../features/user/user-repository.js';
 
@@ -14,7 +14,7 @@ export const jwtAuth = async (req, res, next) => {
   }
 
   try {
-    const payload = jwt.verify(token, process.env.JWT_SECRETKEY);
+    const payload = jwt.verify(token, config.jwt.secretKey);
     req.userId = payload.userId;
     req.username = payload.username;
 

@@ -2,8 +2,6 @@
 // Copyright (c) 2025 Prawin-736
 // See LICENSE file for more information
 
-import dotenv from "dotenv";
-dotenv.config();
 import express from "express";
 import http from "http";
 import path, { dirname } from 'node:path';
@@ -13,9 +11,8 @@ import cors from 'cors';
 import { userRouter } from "./src/features/user/user-router.js";
 import { messageRouter } from "./src/features/message/messenger-router.js";
 import { Server } from "socket.io";
-import { mongooseConnect } from "./config.js";
+import { mongooseConnect } from "./mongodb.config.js";
 import { checkS3Connection } from "./aws/checkS3Connection.js";
-// import { Result } from "express-validator";
 import UserRepository from './src/features/user/user-repository.js';
 import { startExpiredUserChecker } from "./src/middleware/checkExpiredUsers.js";
 

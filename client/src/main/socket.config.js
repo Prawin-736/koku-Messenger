@@ -1,18 +1,28 @@
 import { capitalizeFirstTwoCharacter,dp_background_setter } from "./display-picture.middleware.js";
-import { config } from "../../../server/config.js";
 
+//checks url to confirm in developer or production mode.
+const hostname = window.location.hostname;
+let API_URL;
+
+if (hostname === "localhost") {
+  API_URL = "http://localhost:5300";
+} else {
+  API_URL = "https://myapi.com";
+}
+
+// console.log("API URL:", API_URL);
+ 
 //local host to connect
- const SOCKET_URL = config.SOCKET_URL;
  // dynamicaly adding this script tag
     const socketScript = document.createElement('script');
-    socketScript.src = `${SOCKET_URL}/socket.io/socket.io.js`;
+    socketScript.src = `${API_URL}/socket.io/socket.io.js`;
 
     document.head.appendChild(socketScript);
 
       // Run after the script is fully loaded
     socketScript.onload = function () {
 
-const socket = io.connect(SOCKET_URL);
+const socket = io.connect(API_URL);
 
 // SignIn userDetail adding the current user
 const signInUserDetail = async()=>{

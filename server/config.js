@@ -11,12 +11,11 @@ const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.en
 dotenv.config({ path: path.resolve(__dirname, envFile) });
 
 console.log(`Loaded environment: ${process.env.NODE_ENV || 'development'} from ${envFile}`);
-console.log("checking aws region 1 : "+process.env.AWS_REGION);
-
 
 export const config = {
     env: process.env.NODE_ENV || 'development',
     port:process.env.PORT,
+    socketUrl:process.env.SOCKET_URL,
     jwt: {
         secretKey: process.env.JWT_SECRETKEY
     },

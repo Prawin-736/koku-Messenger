@@ -1,7 +1,7 @@
-import dotenv from "dotenv";
-dotenv.config();
+
 import jwt from "jsonwebtoken";
 import UserRepository from "./user-repository.js";
+import { config } from "../../../config.js";
 
 
 export default class UserController {
@@ -18,7 +18,7 @@ async signInUser(req, res, next) {
         userId: userId,
         username: username,
       },
-      process.env.JWT_SECRETKEY,
+      config.jwt.secretKey,
       { expiresIn: '30m' }
     );
 

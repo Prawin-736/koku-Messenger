@@ -1,5 +1,5 @@
-import dotenv from 'dotenv';
-dotenv.config();
+
+import { config } from '../../../config.js';
 import { userModel,onlineuserModel } from "./user-schema.js";
 import ErrorHandler from "../../middleware/error-handler.js";
 import mongoose from 'mongoose';
@@ -287,7 +287,7 @@ async getAllUsers(){
     const key = `chatApp/profile-pictures/${userId}${fileExtension}`;
 
     const command = new PutObjectCommand({
-      Bucket: process.env.AWS_BUCKET_NAME,
+      Bucket: config.aws.bucketName,
       Key: key,
       Body: file.buffer,
       ContentType: file.mimetype,
@@ -295,7 +295,7 @@ async getAllUsers(){
 
     try {
       await s3Client.send(command);
-      const fileUrl = `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
+      const fileUrl = `https://${config.aws.bucketName}.s3.${config.aws.region}.amazonaws.com/${key}`;
 
       await userModel.findByIdAndUpdate(
         userId,
@@ -327,7 +327,7 @@ async getAllUsers(){
         s3Key = s3Url.pathname.slice(1);
     
         const params = {
-          Bucket: process.env.AWS_BUCKET_NAME,
+          Bucket: config.aws.bucketName,
           Key:s3Key,
         };
 

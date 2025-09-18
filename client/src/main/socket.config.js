@@ -7,7 +7,7 @@ let API_URL;
 if (hostname === "localhost") {
   API_URL = "http://localhost:5300";
 } else {
-  API_URL = "https://myapi.com";
+  API_URL = "http://13.233.208.203:5300";
 }
 
 // console.log("API URL:", API_URL);

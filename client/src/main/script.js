@@ -1,3 +1,13 @@
+//checks url to confirm in developer or production mode.
+const hostname = window.location.hostname;
+let API_URL;
+
+if (hostname === "localhost") {
+  API_URL = "http://localhost:5300";
+} else {
+  // API_URL = "http://13.233.208.203:5300";
+  API_URL = 'https://prawin.dev/project/koku-messenger';
+}
 
 
 //---------------!!!!!!!!! dropdown UI section !!!!!!!!!!!!!
@@ -144,7 +154,7 @@ if(uploadButton){
   const formData = new FormData(); 
   formData.append("profileImage", file);
 
-  const response = await fetch("/api/user/profilepicture", {
+  const response = await fetch(`${API_URL}/api/user/profilepicture`, {
     method: "POST",
      credentials: "include",
      body:formData,
@@ -177,7 +187,7 @@ if(uploadButton){
 
     if(deleteButton){
     event.preventDefault();
-     const response = await fetch("/api/user/removeprofilepicture", {
+     const response = await fetch(`${API_URL}/api/user/removeprofilepicture`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -210,7 +220,7 @@ document.addEventListener("change",async (event)=>{
   
   if(displayModeButton){
   const mode = event.target.checked ? 'dark' : 'light';
-  const response = await fetch('/api/user/displayMode', {
+  const response = await fetch(`${API_URL}/api/user/displayMode`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

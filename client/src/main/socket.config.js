@@ -7,7 +7,8 @@ let API_URL;
 if (hostname === "localhost") {
   API_URL = "http://localhost:5300";
 } else {
-  API_URL = "http://13.233.208.203:5300";
+  // API_URL = "http://13.233.208.203:5300";
+  API_URL = 'https://prawin.dev/project/koku-messenger';
 }
 
 // console.log("API URL:", API_URL);
@@ -27,7 +28,7 @@ const socket = io.connect(API_URL);
 // SignIn userDetail adding the current user
 const signInUserDetail = async()=>{
 
-const response = await fetch("/api/user/userDetail",{
+const response = await fetch(`${API_URL}/api/user/userDetail`,{
   method:"GET",
   credentials:"include",
   "Content-Type":"application/json"
@@ -322,7 +323,7 @@ document.addEventListener("click",async(event)=>{
   const logoutButton = event.target.closest("#user-logout");
 
   if(logoutButton){
-        const response = await fetch("/api/user/logout", {
+        const response = await fetch(`${API_URL}/api/user/logout`, {
             method: "POST",
             credentials: "include",
             headers:{
@@ -432,7 +433,7 @@ dpContainer.append(DpName);
 const getAllMessages =async()=>{
 
 
-  const response = await fetch("/api/main/allmessage",{
+  const response = await fetch(`${API_URL}/api/main/allmessage`,{
     method:'GET',
     credentials:"include",
     headers:{
@@ -521,7 +522,7 @@ function formatDate(date) {
 
 const timeStamp = formatDate(time);
  
- const response = await fetch('/api/main/message',{
+ const response = await fetch(`${API_URL}/api/main/message`,{
   method:"POST",
   credentials:"include",
   headers: {

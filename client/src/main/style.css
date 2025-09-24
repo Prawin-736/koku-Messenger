@@ -47,7 +47,7 @@
 }
 
 [data-bs-theme="dark"] .font-color-black{
-  color: white;
+  color: #D3D3D3
 }
 
 [data-bs-theme="dark"] #navbar-logo__icon {

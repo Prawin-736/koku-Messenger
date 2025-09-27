@@ -46,6 +46,7 @@ app.use('/api/main', messageRouter);
 
 //setting up socket server..
 const io = new Server(server, { 
+    path: '/project/koku-messenger/socket.io', // Important!
     cors:{
         origin:"*",
         methods:["GET","POST"]

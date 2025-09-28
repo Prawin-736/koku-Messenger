@@ -10,13 +10,13 @@ export const jwtAuth = async (req, res, next) => {
   const token = req.cookies.jwt;
 
 // Adding path dynamicaly based on production or developer mode  
-  // const isProd = process.env.NODE_ENV === 'production';
+  const isProd = process.env.NODE_ENV === 'production';
   
   // Adjusting the base path based on the deployment path
-  // const basePath = isProd ? '/project/koku-messenger/' : '/';
+  const basePath = isProd ? '/project/koku-messenger/' : '/';
 
   if (!token) {
-    return res.redirect(`/api/user/signIn`);
+    return res.redirect(`${basePath}api/user/signIn`);
   }
 
   try {
@@ -29,15 +29,15 @@ export const jwtAuth = async (req, res, next) => {
       return next();
     } else {
       //clearning the cookie as it doesnt match with token stored in the userSchema
-      res.clearCookie('jwt');
-      return res.redirect(`/api/user/signIn`);
+      res.clearCookie('jwt',{ path: basePath });
+      return res.redirect(`${basePath}api/user/signIn`);
     }
 
    
   } catch (err) {
     console.error('JWT verification failed:', err.message);
-    //  res.clearCookie('jwt');
-    return res.redirect(`/api/user/signIn`);
+     res.clearCookie('jwt', { path: basePath });
+    return res.redirect(`${basePath}api/user/signIn`);
   }
 };
 

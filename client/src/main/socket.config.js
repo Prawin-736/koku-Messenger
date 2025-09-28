@@ -23,7 +23,9 @@ if (hostname === "localhost") {
       // Run after the script is fully loaded
     socketScript.onload = function () {
 
-const socket = io.connect(API_URL);
+const socket = io.connect(API_URL, {
+  path: '/project/koku-messenger/socket.io',
+});
 
 // SignIn userDetail adding the current user
 const signInUserDetail = async()=>{

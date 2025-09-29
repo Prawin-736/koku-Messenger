@@ -33,7 +33,7 @@ app.use(
 );
 app.use(express.static(path.join(__dirname, '../client/src')));
 // adding static path for devlopment mode
-app.use('/project/koku-messenger', express.static(path.join(__dirname, '../client/src')));
+// app.use('/project/koku-messenger', express.static(path.join(__dirname, '../client/src')));
 
 //creating http server as socket.io need http server for initial handshake..
 const server = http.createServer(app);
@@ -46,7 +46,7 @@ app.use('/api/main', messageRouter);
 
 //setting up socket server..
 const io = new Server(server, { 
-    path: '/project/koku-messenger/socket.io', // Important!
+    // path: '/project/koku-messenger/socket.io', 
     cors:{
         origin:"*",
         methods:["GET","POST"]

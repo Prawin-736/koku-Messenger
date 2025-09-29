@@ -9,7 +9,7 @@ form.addEventListener("submit",async(event)=>{
     
     event.preventDefault();
 const username = document.querySelector("#form-input").value.trim();
-    const response = await fetch("/project/koku-messenger/api/user/signIn",{
+    const response = await fetch("/api/user/signIn",{
         method:"POST",
         credentials:"include",
         headers:{
@@ -44,7 +44,7 @@ const username = document.querySelector("#form-input").value.trim();
               errorBox.style.display = "none";
               successBox.innerHTML = "";
               successBox.style.display = "none";
-              window.location.href = "/project/koku-messenger/api/main";
+              window.location.href = "/api/main";
               }, 500);
               }
 

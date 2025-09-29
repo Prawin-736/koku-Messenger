@@ -2,6 +2,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+    // Insert base tag before anything else
+    (function() {
+      const isProd = window.location.pathname.startsWith('/project/koku-messenger');
+      const baseHref = isProd ? '/project/koku-messenger/' : '/';
+      const baseEl = document.createElement('base');
+      baseEl.setAttribute('href', baseHref);
+      document.head.insertBefore(baseEl, document.head.firstChild);
+    })();
+  </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Koku Messenger- main</title>
@@ -15,16 +25,7 @@
       document.head.appendChild(baseEl);
     })();
   </script> -->
-    <script>
-    // Insert base tag before anything else
-    (function() {
-      const isProd = window.location.pathname.startsWith('/project/koku-messenger');
-      const baseHref = isProd ? '/project/koku-messenger/' : '/';
-      const baseEl = document.createElement('base');
-      baseEl.setAttribute('href', baseHref);
-      document.head.insertBefore(baseEl, document.head.firstChild);
-    })();
-  </script>
+    
   <!-- <base href="/project/koku-messenger/"> -->
          <link rel="icon" href="/assets/icon/feather.svg">
          <script>

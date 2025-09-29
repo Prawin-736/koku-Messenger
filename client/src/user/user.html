@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Koku-login</title>
    <!-- Dynamically create <base> before loading anything else -->
-  <script>
+  <!-- <script>
     (function() {
       const isProd = window.location.pathname.startsWith('/project/koku-messenger');
       const baseHref = isProd ? '/project/koku-messenger/' : '/';
       const baseEl = document.createElement('base');
       baseEl.setAttribute('href', baseHref);
       document.head.appendChild(baseEl);
+    })();
+  </script> -->
+  <script>
+    // Insert base tag before anything else
+    (function() {
+      const isProd = window.location.pathname.startsWith('/project/koku-messenger');
+      const baseHref = isProd ? '/project/koku-messenger/' : '/';
+      const baseEl = document.createElement('base');
+      baseEl.setAttribute('href', baseHref);
+      document.head.insertBefore(baseEl, document.head.firstChild);
     })();
   </script>
   <!-- <base href="/project/koku-messenger/"> -->

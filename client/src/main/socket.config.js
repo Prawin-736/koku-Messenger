@@ -1,5 +1,5 @@
 import { capitalizeFirstTwoCharacter,dp_background_setter } from "./display-picture.middleware.js";
-
+//
 //checks url to confirm in developer or production mode.
 const hostname = window.location.hostname;
 let API_URL;

@@ -11,7 +11,7 @@ export const messageRouter = express.Router();
 const messageController = new MessageController();
 
 messageRouter.get('/', jwtAuth,(req, res,next) => {
-  res.sendFile(path.join(__dirname, '../../../../client/src/main/index.html'));
+  res.sendFile(path.join(__dirname, '../../../../client/src/main/index.dev.html'));
 });
 
 //Post Message

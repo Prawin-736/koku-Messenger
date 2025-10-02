@@ -168,7 +168,7 @@ async currentOnlineUser(userId){
         ).pathname.slice(1);
         const profilePictureSignedUrl =
           await generateSignedUrl(profilePictureKey);
-          console.log(profilePictureSignedUrl);
+          // console.log(profilePictureSignedUrl);
         userObj.profilepicture = profilePictureSignedUrl;
 
         return userObj;

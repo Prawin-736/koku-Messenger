@@ -13,10 +13,8 @@ import { messageRouter } from "./src/features/message/messenger-router.js";
 import { Server } from "socket.io";
 import { mongooseConnect } from "./mongodb.config.js";
 import { checkS3Connection } from "./aws/checkS3Connection.js";
-import UserRepository from './src/features/user/user-repository.js';
 import { startExpiredUserChecker } from "./src/middleware/checkExpiredUsers.js";
 import { config } from "./config.js";
- const userRepository = new UserRepository();
 
 // setting this to get absoulte path
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -31,27 +29,38 @@ app.use(
     credentials: true,
   })
 );
-app.use(express.static(path.join(__dirname, '../client/src')));
-// adding static path for devlopment mode
-// app.use('/project/koku-messenger', express.static(path.join(__dirname, '../client/src')));
+
+
+const staticPath = path.join(__dirname, '../client/src');
+//development mode
+if (process.env.NODE_ENV === 'development') {
+  app.use(express.static(staticPath));
+} else {
+//production mode
+  app.use('/project/koku-messenger', express.static(staticPath));
+}
+
 
 //creating http server as socket.io need http server for initial handshake..
 const server = http.createServer(app);
 
 startExpiredUserChecker();
+
+
 app.use('/api/user', userRouter);
 app.use('/api/main', messageRouter);
 
 
+// adding path based on production or development mode.
+const isProduction = process.env.NODE_ENV === 'production';
+const io = new Server(server, {
+  path: isProduction ? '/project/koku-messenger/socket.io' : '/socket.io',
+  cors: {
+    origin: '*',
+    methods: ['GET', 'POST'],
+  },
+});
 
-//setting up socket server..
-const io = new Server(server, { 
-    // path: '/project/koku-messenger/socket.io', 
-    cors:{
-        origin:"*",
-        methods:["GET","POST"]
-    }
- });
 
   io.on("connection",(socket)=>{
 

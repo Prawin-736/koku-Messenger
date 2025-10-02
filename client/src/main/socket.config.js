@@ -6,14 +6,10 @@ let API_URL;
 
 if (hostname === "localhost") {
   API_URL = "http://localhost:5300";
-} else {
-  // API_URL = "http://13.233.208.203:5300";
+} else {    
   API_URL = 'https://prawin.dev/project/koku-messenger';
 }
 
-// console.log("API URL:", API_URL);
- 
-//local host to connect
  // dynamicaly adding this script tag
     const socketScript = document.createElement('script');
     socketScript.src = `${API_URL}/socket.io/socket.io.js`;
@@ -23,10 +19,11 @@ if (hostname === "localhost") {
       // Run after the script is fully loaded
     socketScript.onload = function () {
 
-const socket = io.connect(API_URL
-//   , {
-//   path: '/project/koku-messenger/socket.io',
-// }
+// dynamicaly setting path based on path name of url starts with 
+const socket = io.connect(API_URL,
+{path: window.location.pathname.startsWith('/project/koku-messenger')
+    ? '/project/koku-messenger/socket.io'
+    : '/socket.io'},
 );
 
 // SignIn userDetail adding the current user

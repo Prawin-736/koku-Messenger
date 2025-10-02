@@ -19,7 +19,7 @@ const upload = multer({ storage: storage });
 
 
 userRouter.get('/signIn', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../../../client/src/user/user.html'));
+  res.sendFile(path.join(__dirname, '../../../../client/src/user/user.dev.html'));
 });
 
 userRouter.post('/signIn',signInvalidation, (req, res,next) => {userController.signInUser(req,res,next)});

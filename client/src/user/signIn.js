@@ -1,5 +1,4 @@
 
-//
 
 const form = document.querySelector(".login__form");
 const errorBox = document.querySelector("#error-box");

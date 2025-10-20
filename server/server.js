@@ -84,15 +84,32 @@ const io = new Server(server, {
 });
 
      //------------------message section
-         socket.on("AllMessages",(result)=>{
-          io.emit("AllMessages",result);
-         });
+      
 
      socket.on("postMessage", (message) => {
-    socket.broadcast.emit("postMessage", message);
+    socket.broadcast.emit("broadCastPostMessage", message);
   });
 
      //------------------message section------------------------//
+
+    //  -------------------Typing indicator
+//When someone is typing
+socket.on("typingindicator", (user) => {
+  socket.broadcast.emit("typingindicators", user);
+});
+
+// When someone stops typing
+socket.on("stoptyping", (user) => {
+  socket.broadcast.emit("stoptyping", user);
+});
+
+
+    //  -------------------Typing indicator-----------------------//
+    
+    // ----------------------delete Message
+socket.on("deleteMessage",(messageId)=>{
+  socket.broadcast.emit("deleteMessage",messageId);
+})
 
   //---------------userDetail section after login
 

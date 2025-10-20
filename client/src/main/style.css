@@ -10,11 +10,30 @@
 
  /*--------- !!!!!!!!!!!!!! common-class !!!!!!!!!!!!!!!!! */
 
-.circle-image-fit{
-    height: 100%;
-    width: 100%;
+.circle-image-fit {
+    height: 50px; 
+    width: 50px;
+    border-radius: 50%;
     overflow: hidden;
+    position: relative;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       
+    object-position: center;  
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
 
 /*---------!!!!!!!!!!!!!!!!!  common-class !!!!!!!!!!!!!!!!-----*/
 
@@ -28,18 +47,18 @@
 .background-info-bg-subtle{
   background-color: #cff4fc
 }
-/* default font color */
+
 .font-color-black{
   color: #212529;
 }
 
+/* default font color */
 /* -----------------------------default mode --------------------- */
 
 /*----------------- bootstrap dark theme custom color setup */
 
 [data-bs-theme="dark"] .background-white {
   background-color: #212529;
-  /* border: #343a40 solid 1px; */
 }
 
 [data-bs-theme="dark"] .background-info-bg-subtle {
@@ -65,6 +84,11 @@
 [data-bs-theme="dark"] .collapse-count{
   border-color: white !important;
 }
+
+  [data-bs-theme="dark"] .delete-message-icon{
+    filter: brightness(0) invert(1) ;
+  }
+
 
 /*----------------- bootstrap dark theme custom color setup ----------------------------*/
 
@@ -131,24 +155,34 @@ overflow: hidden;
 
 @media screen and (max-width: 768px) {
 
-    .username {
-        font-size: 1.1rem;
-    }  
+.typing-pic{
+width: 1.8rem !important;
+height: 1.8rem !important;
 
-    .welcome-message{
-              font-size: 1.1rem !important;  
-    }
+}
 
-    #typing-indicator-name{
-        display: none !important;
-    }
-
-    .user-typing-indicator{
+.user-typing-indicator{
 margin-right: auto;     }
 
 #dynamic-dropdown{
   margin-left: 0 !important;
   }
+.welcome-user-join{
+    flex-direction: column;
+}
+ .welcome-user-join p{
+    font-size: 1rem !important;
+}
+
+.typing-indicator{
+        flex-direction: column;
+}
+
+.typing-indicator p{
+    font-size: .7rem !important;
+    margin: 0 !important;
+
+}
 
 }
 /* ----------!!!!!!!!!!!!!! welcome tray !!!!!!!!!!!!!!!!----------- */
@@ -167,15 +201,20 @@ margin-right: auto;     }
 .send-receive-msg-container{
     min-height: 1rem;
     max-height: auto;
-    width: 50%;
+    max-width: 50%;
     margin-bottom: 1rem; 
     margin-left: auto;
   }
+
+    .current-msg-container{
+          margin-right: 0 !important;
+      }
   
   .chat-circle{
    width: 2.5rem;
     height: 2.5rem;
-    background-color:white ;
+    min-width:2.5rem;
+    min-height:2.5rem;
     border-radius: 50%;
     box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) ;
     margin-left: .5rem;
@@ -205,27 +244,51 @@ margin-right: auto;     }
      background-color: #0d6efd;
      border-radius: .4rem;
      text-align: justify;
+      word-wrap: break-word;
+    white-space: normal;
+    max-height: 8.9rem; 
+    overflow: hidden; 
+    position: relative;
   }
   
   
-  
-  .receive-msg{
-      height: auto;
-      min-width: 6rem;
-       width: auto;   
-       max-width: 80%;
-      background-color:#e9ecef;
-      border-radius: .4rem;
-        max-width: 100%;           /* Ensures the message box doesn’t overflow its parent */
-  word-wrap: break-word;     /* Forces long words or strings (like URLs) to break */
-  white-space: normal;    
-  }
-  
-  @media (max-width:992px){
+ .receive-msg {
+    height: auto;
+    min-width: 6rem;
+    width: auto;   
+    max-width: 80%;
+    background-color: #e9ecef;
+    border-radius: .4rem;
+    word-wrap: break-word;
+    white-space: normal;
+    max-height: 8.9rem; 
+    overflow: hidden; 
+    position: relative;
+}
+
+  .show-more {
+    color: blue;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.bottom-detail {
+  width: fit-content;
+  align-self: flex-end;
+}
+
+  @media (max-width:769px){
       .send-receive-msg-container{
-          width: 100%;
+          max-width: 85%;
       }   
+      .current-msg-container{
+          margin-right: 0 !important;
+      }
+
   }
+
   .date-time div{
       font-size: small;
   }
@@ -236,7 +299,21 @@ margin-right: auto;     }
   .user-name{
       font-weight:bolder;
   }
+@media screen and (max-width: 550px){
 
+ .chat-circle{
+        margin-left: 0 !important;
+}
+
+.sender-msg{
+    font-size: small;
+}
+
+.receive-msg{
+    font-size: small;
+}
+ 
+  }
   /* ---------- message body container -------------------*/
 
   /* --------------- message-input */
@@ -258,35 +335,39 @@ margin-right: auto;     }
    border: 2px solid #0d6efd !important;
 }
 
+
+
 #message-submit-button{
     width: 13%;
 }
 
-@media screen and (min-width: 769px) {
-    #Submit {
-        display: inline;
-    } 
-  
+#Submit {
+padding-left: 1rem;
+padding-right: 1rem;
 }
+
+
+@media screen and (max-width: 768px) {
+  #Submit {
+        display: inline;
+        font-size: smaller !important;
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
+    } 
+
+    #message-input{
+        margin-left: 0 !important;
+        font-size: smaller !important;
+         width: calc(100% - 10%) !important;
+    }
+
+} 
 
 /* --------------- message-input ---------------- */
 
 /* ----------!!!!!!!!!!!!!! left side !!!!!!!!!!!!!!!!!!--------------*/
 
-/* ----------!!!!!!!!!!!!!! right side !!!!!!!!!!!!!!!!!!
-
-/* display picture common */
-/* .display-picture { 
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    overflow: hidden;
-     box-shadow: 0px 0px 4px black;
-
-} */
+/* ----------!!!!!!!!!!!!!! right side !!!!!!!!!!!!!!!!!!  */
 
 .welcome-right-tray{
     padding: .5rem;
@@ -309,13 +390,6 @@ margin-right: auto;     }
 
 /* ----------!!!!!!!!!!!!!! right side !!!!!!!!!!!!!!!!!!--------------*/
 
-
-
-
-
-
-
-
 /* .display-picture img, */
 .posting__dp img,.comment__dp{
     width: 100%;
@@ -327,12 +401,7 @@ margin-right: auto;     }
 
 }  
 
-
 /* ---------- left side - welcome tray ------------- */
-
-
-
-
 
 /*------ !! online users and offline user section */
 
@@ -449,10 +518,7 @@ margin-right: auto;     }
 }
 /* ----------offline user section------------*/
 
-
 /* ----------------right-side - online & offline container -------------*/
-
-
 
 
 /* -------------dropdown */
@@ -493,8 +559,6 @@ margin-right: auto;     }
     border-color: #000000 !important;
 }
 
-
-
 /* setting pointer for all the options in dropdown to avoid text seleciton cursor */
 .dropdown-menu {
     user-select: none;
@@ -513,4 +577,17 @@ margin-right: auto;     }
 
   /* -------------dropdown---------------- */
   
+  /* upload modal */
+
+  .upload__view-container{
+    width: 22rem;
+     height: 15rem; 
+     display: none;
+  }
+
+  @media screen and (max-width: 550px){
   
+  .upload__view-container{
+    width: 20rem;
+  }
+  }

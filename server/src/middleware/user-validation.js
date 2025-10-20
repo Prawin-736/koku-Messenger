@@ -6,7 +6,7 @@ export const  signInvalidation =async(req, res, next)=> {
 const rules = [
   body('username')
     .notEmpty()
-    .withMessage('🔶 Username is required. Please fill it in.')
+    .withMessage('🔶 Username is required.')
     .isLength({ min: 4, max: 12 })
     .withMessage('🔶 Name should have between 4 to 12 characters')
     .matches(/^[A-Za-z]+$/)

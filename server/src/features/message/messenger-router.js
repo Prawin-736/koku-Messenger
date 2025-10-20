@@ -19,7 +19,12 @@ messageRouter.post('/message',jwtAuth,(req,res,next)=>{
   messageController.postMessage(req,res,next);
 })
 
-//Post Message
+//get all Message
 messageRouter.get('/allmessage',jwtAuth,(req,res,next)=>{
   messageController.getAllMessages(req,res,next);
 })
+
+//delete specifc message.
+messageRouter.delete('/message/:id', jwtAuth, (req, res, next) => {
+  messageController.deleteMessages(req, res, next);
+});

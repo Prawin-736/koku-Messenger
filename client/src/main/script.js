@@ -140,8 +140,9 @@ document.addEventListener('click', async (event) => {
   
   const uploadButton = event.target.closest("#profile-upload-button");
 
-  // event.preventDefault();
 if(uploadButton){
+
+  event.preventDefault()
   const uploadInput = document.querySelector('#profilepictureUpload');
 
   const file = uploadInput.files[0]; 
@@ -159,9 +160,12 @@ if(uploadButton){
      body:formData,
   });
 
+  const result = await response.json();
+
   if(response.ok){
 
-   // Close the modal
+    console.log("checking profile picture result : ",result);
+  //  Close the modal
    const modal = document.querySelector('#upload-profile-picture-modal'); 
    const modalInstance = bootstrap.Modal.getInstance(modal);
    if (modalInstance) {
@@ -174,7 +178,7 @@ if(uploadButton){
     previewContainer.style.display="none";
  
     //reload page
-    window.location.reload();
+  window.location.reload();
   }
 }
 });
@@ -229,7 +233,8 @@ document.addEventListener("change",async (event)=>{
   });
 
   if(response.ok){
-    window.location.reload();
+  document.documentElement.setAttribute('data-bs-theme', mode);
+  localStorage.setItem('theme', mode);
   }
 }
 });

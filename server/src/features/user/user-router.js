@@ -16,14 +16,17 @@ const userController = new UserController();
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-
+const isProduction = process.env.NODE_ENV === 'production';
 
 userRouter.get('/signIn', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../../../client/src/user/user.dev.html'));
+ const fileName = isProduction ? 'user.prod.html' : 'user.dev.html';
+
+  res.sendFile(path.join(__dirname, '../../../../client/src/user', fileName));
 });
 
 userRouter.post('/signIn',signInvalidation, (req, res,next) => {userController.signInUser(req,res,next)});
 
+//fetches user detail.after user logins
 userRouter.get('/userDetail',jwtAuth,(req,res,next)=>{userController.getUserDetail(req,res,next)})
 
 

@@ -4,6 +4,7 @@ const form = document.querySelector(".login__form");
 const errorBox = document.querySelector("#error-box");
 const successBox = document.querySelector("#success-box");
 
+//submitting signIn username.
 form.addEventListener("submit",async(event)=>{
     
     event.preventDefault();
@@ -21,7 +22,7 @@ const username = document.querySelector("#form-input").value.trim();
     const result = await response.json();
 
     
-    // error message
+            // error message
             if (!response.ok) {
                 if (result.errors && Array.isArray(result.errors) && result.errors.length > 0) {
             let firstError = `<small class="bg-danger-subtle px-4 py-2 rounded-2">${result.errors[0].message}</small>`;
@@ -37,7 +38,7 @@ const username = document.querySelector("#form-input").value.trim();
                 successBox.style.display="block";
   
             setTimeout(() => {
-                // consider loginForm is a <form> element //important to know
+            // consider loginForm is a <form> element //important to know
               form.reset(); 
               errorBox.innerHTML = "";
               errorBox.style.display = "none";

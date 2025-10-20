@@ -14,10 +14,9 @@ import { generateSignedUrl } from '../../../aws/s3SignedUrl.js';
 
 export default class UserRepository {
 
-
   async addToken(userId,token,time){
     try{
-        //adding the token to the user
+      //adding the token to the user
  const addTokenToUser = await userModel.findByIdAndUpdate(
   userId,{
     $set: {
@@ -38,7 +37,7 @@ return addTokenToUser;
   }
 
     //getting user tokens 
-  async fetchUserToken(userId){  //(CHECKED)
+  async fetchUserToken(userId){ 
     try{
 const user = await userModel.findById(userId);
 const userToken = user.token.token;
@@ -140,7 +139,6 @@ async  currentOnlineUsersEmit(userId) {
         ).pathname.slice(1);
         const profilePictureSignedUrl =
           await generateSignedUrl(profilePictureKey);
-          console.log(profilePictureSignedUrl);
         userObj.user.profilepicture = profilePictureSignedUrl;
         return userObj;
       }
@@ -168,7 +166,6 @@ async currentOnlineUser(userId){
         ).pathname.slice(1);
         const profilePictureSignedUrl =
           await generateSignedUrl(profilePictureKey);
-          // console.log(profilePictureSignedUrl);
         userObj.profilepicture = profilePictureSignedUrl;
 
         return userObj;
@@ -219,7 +216,6 @@ async OfflineUserIo() {
     throw new ErrorHandler("Something went wrong with the database.", 500);
   }
 }
-
 
 async allUserCounts(){
   try{

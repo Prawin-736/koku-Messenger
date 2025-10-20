@@ -9,9 +9,7 @@ export default class UserController {
     this.userRepository = new UserRepository();
   }
 
-
 async signInUser(req, res, next) {
-  // Use arrow function to preserve `this`
   const createToken = async (userId, username) => {
     const token = jwt.sign(
       {
@@ -29,7 +27,7 @@ async signInUser(req, res, next) {
     if (addToken) {
       res.cookie('jwt', token, {
         httpOnly: true,
-        secure: false, // only over HTTPS in production
+        secure: false, 
         sameSite: 'strict',
         maxAge: 60 * 60 * 1000, // 1 hour
       });

@@ -1,30 +1,28 @@
 import { capitalizeFirstTwoCharacter, dp_background_setter } from "./display-picture.middleware.js";
 
-// Checks url to confirm in developer or production mode
 const hostname = window.location.hostname;
-let API_URL;
-let CNT_URL;
+let BASE_URL;
+let SOCKET_PATH;
+
 if (hostname === "localhost") {
-  API_URL = "http://localhost:5300";
-  CNT_URL = "http://localhost:5300";
+  BASE_URL = "http://localhost:5300";
+  SOCKET_PATH = "/socket.io"; // Default path for localhost
 } else {    
-  API_URL = 'https://prawin.dev/project/koku-messenger';
-  CNT_URL = 'https://prawin.dev';
+  BASE_URL = 'https://prawin.dev';
+  SOCKET_PATH = '/project/koku-messenger/socket.io'; // Custom path for production
 }
 
 // Dynamically adding this script tag
 const socketScript = document.createElement('script');
-socketScript.src = `${API_URL}/socket.io/socket.io.js`;
+socketScript.src = `${BASE_URL}${SOCKET_PATH}/socket.io.js`;
 document.head.appendChild(socketScript);
 
 // Run after the script is fully loaded
 socketScript.onload = function () {
 
   // Dynamically setting path based on path name of url starts with 
-  const socket = io.connect(CNT_URL, {
-    path: window.location.pathname.startsWith('/project/koku-messenger')
-      ? '/project/koku-messenger/socket.io'
-      : '/socket.io'
+  const socket = io(BASE_URL, {
+    path: SOCKET_PATH
   });
 
   // SignIn userDetail adding the current user

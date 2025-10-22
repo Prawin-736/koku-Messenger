@@ -14,14 +14,14 @@ if (hostname === "localhost") {
 
 // Dynamically adding this script tag
 const socketScript = document.createElement('script');
-socketScript.src = `${CNT_URL}/socket.io/socket.io.js`;
+socketScript.src = `${API_URL}/socket.io/socket.io.js`;
 document.head.appendChild(socketScript);
 
 // Run after the script is fully loaded
 socketScript.onload = function () {
 
   // Dynamically setting path based on path name of url starts with 
-  const socket = io.connect(API_URL, {
+  const socket = io.connect(CNT_URL, {
     path: window.location.pathname.startsWith('/project/koku-messenger')
       ? '/project/koku-messenger/socket.io'
       : '/socket.io'

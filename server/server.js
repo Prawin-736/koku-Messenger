@@ -30,16 +30,8 @@ app.use(
   })
 );
 
-
 const staticPath = path.join(__dirname, '../client/src');
-//development mode
-if (process.env.NODE_ENV === 'development') {
   app.use(express.static(staticPath));
-} else {
-//production mode
-  app.use('/project/koku-messenger', express.static(staticPath));
-}
-
 
 //creating http server as socket.io need http server for initial handshake..
 const server = http.createServer(app);

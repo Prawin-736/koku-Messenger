@@ -1,4 +1,12 @@
+//checks url to confirm in developer or production mode.
+const hostname = window.location.hostname;
+let API_URL;
 
+if (hostname === "localhost") {
+  API_URL = "http://localhost:5300";
+} else {
+  API_URL = 'https://prawin.dev/project/koku-messenger';
+}
 
 const form = document.querySelector(".login__form");
 const errorBox = document.querySelector("#error-box");
@@ -9,7 +17,7 @@ form.addEventListener("submit",async(event)=>{
     
     event.preventDefault();
 const username = document.querySelector("#form-input").value.trim();
-    const response = await fetch("/api/user/signIn",{
+    const response = await fetch(`${API_URL}/api/user/signIn`,{
         method:"POST",
         credentials:"include",
         headers:{
@@ -44,7 +52,7 @@ const username = document.querySelector("#form-input").value.trim();
               errorBox.style.display = "none";
               successBox.innerHTML = "";
               successBox.style.display = "none";
-              window.location.href = "/api/main";
+              window.location.href = `${API_URL}/api/main`;
               }, 500);
               }
 

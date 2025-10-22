@@ -10,8 +10,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export const messageRouter = express.Router();
 const messageController = new MessageController();
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 messageRouter.get('/', jwtAuth,(req, res,next) => {
-  res.sendFile(path.join(__dirname, '../../../../client/src/main/index.dev.html'));
+   const fileName = isProduction ? 'index.prod.html' : 'index.dev.html';
+
+  res.sendFile(path.join(__dirname, '../../../../client/src/main',fileName));
 });
 
 //Post Message

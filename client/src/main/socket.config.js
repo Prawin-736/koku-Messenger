@@ -3,16 +3,18 @@ import { capitalizeFirstTwoCharacter, dp_background_setter } from "./display-pic
 // Checks url to confirm in developer or production mode
 const hostname = window.location.hostname;
 let API_URL;
-
+let CNT_URL;
 if (hostname === "localhost") {
   API_URL = "http://localhost:5300";
+  CNT_URL = "http://localhost:5300";
 } else {    
   API_URL = 'https://prawin.dev/project/koku-messenger';
+  CNT_URL = 'https://prawin.dev';
 }
 
 // Dynamically adding this script tag
 const socketScript = document.createElement('script');
-socketScript.src = `${API_URL}/socket.io/socket.io.js`;
+socketScript.src = `${CNT_URL}/socket.io/socket.io.js`;
 document.head.appendChild(socketScript);
 
 // Run after the script is fully loaded
@@ -343,7 +345,7 @@ socketScript.onload = function () {
           <div class="d-flex align-items-center justify-content-end"> 
             <div class="me-2 dropdown">
               <button class="btn p-0 delete-message-icon" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="../assets/icon/three-dots-horizontal.svg" alt="Menu" style="height: 20px;">
+                <img src="assets/icon/three-dots-horizontal.svg" alt="Menu" style="height: 20px;">
               </button>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item delete-message" data-id="${message._id}">Delete</a></li>
@@ -364,7 +366,7 @@ socketScript.onload = function () {
           <div class="d-flex align-items-center justify-content-end"> 
             <div class="receive-msg" style="background-color: #0d6efd; padding: 8px 12px; border-radius: 8px; max-width: 100%; color: white;font-size: 14px;line-height: 1.4;word-break: break-word;">
               <p style="message-text margin-bottom: 0; font-style: italic; color: white; font-weight: normal;">
-                <img src="../assets/icon/ban.svg" style="width: 14px; height: 14px; filter: brightness(0) invert(1); vertical-align: middle; margin-right: 6px;">
+                <img src="assets/icon/ban.svg" style="width: 14px; height: 14px; filter: brightness(0) invert(1); vertical-align: middle; margin-right: 6px;">
                 This message was deleted.
               </p>
             </div>
@@ -419,7 +421,7 @@ socketScript.onload = function () {
             <div class="receive-msg px-3 d-flex flex-column position-relative">
               <div class="user-name" style="color:black">${message.user.username}</div>
               <p class="message-text mb-1" style=" color: #6c757d;font-weight: normal; font-size:14px;font-style: italic;">
-                <img src="../assets/icon/ban.svg" style="width: 14px; height: 14px;">
+                <img src="assets/icon/ban.svg" style="width: 14px; height: 14px;">
                 This message was deleted.
               </p>
             </div>
@@ -551,7 +553,7 @@ socketScript.onload = function () {
 
       if (messageText) {
         const deleteMessageStructure = `<p class="message-text mb-1" style="color: #6c757d;font-weight: normal; font-size:14px;font-style: italic;">
-          <img src="../assets/icon/ban.svg" style="width: 14px; height: 14px;">
+          <img src="assets/icon/ban.svg" style="width: 14px; height: 14px;">
           This message was deleted.
         </p>`;
         
@@ -581,7 +583,7 @@ socketScript.onload = function () {
 
           if (messageContainer) {
             const deleteMessageStructure = `<p style="margin-bottom: 0; font-style: italic; color: white; font-weight: normal;">
-              <img src="../assets/icon/ban.svg" style="width: 14px; height: 14px; filter: brightness(0) invert(1); vertical-align: middle; margin-right: 6px;">
+              <img src="assets/icon/ban.svg" style="width: 14px; height: 14px; filter: brightness(0) invert(1); vertical-align: middle; margin-right: 6px;">
               This message was deleted.
             </p>`;
             

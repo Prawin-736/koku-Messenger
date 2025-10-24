@@ -35,7 +35,8 @@ async signInUser(req, res, next) {
   };
 
   try {
-    const username = req.body.username;
+    // Normalize username convert to lowercase 
+    const username = req.body.username.trim().toLowerCase();
     // checking first time login
     const user = await this.userRepository.checkUserExsist(username);
     if (!user) {

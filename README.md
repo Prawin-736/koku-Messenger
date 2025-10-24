@@ -51,6 +51,8 @@ Koku-Messenger is a full-stack real-time chat application designed for modern me
 
   <img src="./client/src/assets/screenshots/3.jpg" width="60%" style="margin: 10px;" />
   <img src="./client/src/assets/screenshots/5.jpg" width="25%" style="margin: 10px;" />
+   <img src="./client/src/assets/screenshots/2.jpg" width="25%" style="margin: 10px;" />
+  <img src="./client/src/assets/screenshots/4.jpg" width="60%" style="margin: 10px;" />
 
 </div>
 

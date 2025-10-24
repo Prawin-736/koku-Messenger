@@ -45,6 +45,15 @@ Koku-Messenger is a full-stack real-time chat application designed for modern me
 - ☁️ **AWS S3**
   - Secure, scalable storage for profile images
 
+  ## 🖼️ Screenshots
+
+| ![Landing Page](./client/src/assets/screenshots/1.jpg) | ![Chat Interface](./client/src/assets/screenshots/2.jpg) |
+|------------------------------------------|--------------------------------------------------|
+| ![Mobile View](./client/src/assets/screenshots/3.jpg) | ![Desktop View](./client/src/assets/screenshots/4.jpg) |
+|------------------------------------------|--------------------------------------------------|
+| ![Mobile View](./client/src/assets/screenshots/5.jpg) | ![Desktop View](./client/src/assets/screenshots/6) |
+
+
 ## 🛠️ Tech Stack
 
 ### Frontend

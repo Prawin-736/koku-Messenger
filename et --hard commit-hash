@@ -1,0 +1,151 @@
+[33mbae40a5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: reset: moving to HEAD~2
+[33mdfd507b[m HEAD@{1}: pull origin main: Merge made by the 'ort' strategy.
+[33m4542895[m HEAD@{2}: rebase (finish): returning to refs/heads/main
+[33m4542895[m HEAD@{3}: rebase (squash): fix:dynmaicaly setting base href based on dev or start
+[33m8a77a32[m HEAD@{4}: rebase (squash): # This is a combination of 15 commits.
+[33mea5efb0[m HEAD@{5}: rebase (squash): # This is a combination of 14 commits.
+[33mf29e014[m HEAD@{6}: rebase (squash): # This is a combination of 13 commits.
+[33m923d7e6[m HEAD@{7}: rebase (squash): # This is a combination of 12 commits.
+[33m974647a[m HEAD@{8}: rebase (squash): # This is a combination of 11 commits.
+[33maf5d848[m HEAD@{9}: rebase (squash): # This is a combination of 10 commits.
+[33m63e28a8[m HEAD@{10}: rebase (squash): # This is a combination of 9 commits.
+[33m1e00092[m HEAD@{11}: rebase (squash): # This is a combination of 8 commits.
+[33m0ef28ff[m HEAD@{12}: rebase (squash): # This is a combination of 7 commits.
+[33m7fd2950[m HEAD@{13}: rebase (squash): # This is a combination of 6 commits.
+[33md1d22ed[m HEAD@{14}: rebase (squash): # This is a combination of 5 commits.
+[33mb6b7b85[m HEAD@{15}: rebase (squash): # This is a combination of 4 commits.
+[33m9f9e5f3[m HEAD@{16}: rebase (squash): # This is a combination of 3 commits.
+[33m869b927[m HEAD@{17}: rebase (squash): # This is a combination of 2 commits.
+[33mfb712f1[m HEAD@{18}: rebase (start): checkout HEAD~16
+[33ma61964a[m HEAD@{19}: rebase (abort): returning to refs/heads/main
+[33ma61964a[m HEAD@{20}: rebase (abort): returning to refs/heads/main
+[33ma61964a[m HEAD@{21}: rebase (finish): returning to refs/heads/main
+[33ma61964a[m HEAD@{22}: rebase (squash): updated README.md v1
+[33meb2169e[m HEAD@{23}: rebase (squash): # This is a combination of 15 commits.
+[33m869559b[m HEAD@{24}: rebase (squash): # This is a combination of 14 commits.
+[33m92768a2[m HEAD@{25}: rebase (squash): # This is a combination of 13 commits.
+[33mfccbece[m HEAD@{26}: rebase (squash): # This is a combination of 12 commits.
+[33m0aa5f71[m HEAD@{27}: rebase (squash): # This is a combination of 11 commits.
+[33mb8752f9[m HEAD@{28}: rebase (squash): # This is a combination of 10 commits.
+[33mcccda3a[m HEAD@{29}: rebase (squash): # This is a combination of 9 commits.
+[33ma8b93fc[m HEAD@{30}: rebase (squash): # This is a combination of 8 commits.
+[33m3819b08[m HEAD@{31}: rebase (squash): # This is a combination of 7 commits.
+[33m4fcfc9b[m HEAD@{32}: rebase (squash): # This is a combination of 6 commits.
+[33m6ccee00[m HEAD@{33}: rebase (squash): # This is a combination of 5 commits.
+[33md78f5da[m HEAD@{34}: rebase (squash): # This is a combination of 4 commits.
+[33mafc5945[m HEAD@{35}: rebase (squash): # This is a combination of 3 commits.
+[33md4c1a71[m HEAD@{36}: rebase (squash): # This is a combination of 2 commits.
+[33m70da745[m HEAD@{37}: rebase (start): checkout HEAD~16
+[33mcd9b8d7[m HEAD@{38}: commit: updated README.md v-01
+[33mf4423a8[m HEAD@{39}: commit: updated README.md +screenshots v-02
+[33mde74445[m HEAD@{40}: commit: updated README.md +screenshots v-01
+[33mc8e78ff[m HEAD@{41}: commit: updated README.md +screenshots -v5
+[33m55b9386[m HEAD@{42}: commit: updated README.md +screenshots -v4
+[33m0e817d5[m HEAD@{43}: commit: updated README.md +screenshots -v3
+[33mdb137de[m HEAD@{44}: commit: updated README.md +screenshots -v2
+[33mf0a1f18[m HEAD@{45}: commit: updated README.md +screenshots
+[33mebf71c2[m HEAD@{46}: commit: update README.md v-7
+[33mb6ae4e9[m HEAD@{47}: commit: update README.md v-6
+[33maa7060b[m HEAD@{48}: commit: update README.md v-6
+[33m22fcf34[m HEAD@{49}: commit: update README.md v-5
+[33mdc2468e[m HEAD@{50}: commit: update README.md v-4
+[33m86c119f[m HEAD@{51}: commit: update README.md v-3
+[33m21376f0[m HEAD@{52}: commit: update README.md v-2
+[33m70da745[m HEAD@{53}: commit: updated README.md v1
+[33med2d34a[m HEAD@{54}: commit: full project complete v-03
+[33m30af325[m HEAD@{55}: commit: full project complete v-02
+[33m41c0391[m HEAD@{56}: commit: full project complete v-02
+[33mbd92079[m HEAD@{57}: commit: full project complete
+[33m9b19b48[m HEAD@{58}: commit: modified html for to work based on dev or prod
+[33m06e1298[m HEAD@{59}: commit: fixining to work for locally(developer mode)-v3
+[33m0183eab[m HEAD@{60}: commit: fixining to work for locally(developer mode)-v2
+[33m60ab785[m HEAD@{61}: commit (merge): fixining to work for locally(developer mode)
+[33md530f5f[m HEAD@{62}: commit: fixing to work in locally (development mode)
+[33mf71e217[m HEAD@{63}: reset: moving to HEAD~1
+[33m655443e[m HEAD@{64}: commit: checking the localy working version
+[33mf71e217[m HEAD@{65}: checkout: moving from 889fd19e45bcbe427a378c4bb5c5fb742e4cfab3 to main
+[33m889fd19[m HEAD@{66}: commit: checking with localsetting
+[33mdcafa4e[m HEAD@{67}: commit: v-4
+[33m0310ba8[m HEAD@{68}: commit: fix: dynamicaly setting path based on mode which is launched v-3
+[33m031b712[m HEAD@{69}: checkout: moving from main to 031b7125e0e369900a7d3aecbc9d82404569993b
+[33mf71e217[m HEAD@{70}: commit: fix: dynamicaly setting path based on mode which is launched v-2
+[33m329c54b[m HEAD@{71}: commit: fix: dynamicaly setting path based on mode which is launched v-2
+[33me916b18[m HEAD@{72}: commit: fix: dynamicaly setting path based on mode which is launched
+[33m031b712[m HEAD@{73}: commit: fix:socket.io connection
+[33m108a10a[m HEAD@{74}: rebase (finish): returning to refs/heads/main
+[33m108a10a[m HEAD@{75}: rebase (squash): fix: dynamically set base href based on environment (combined multiple fixes)
+[33m92ca1d6[m HEAD@{76}: rebase (squash): # This is a combination of 31 commits.
+[33m1a0e792[m HEAD@{77}: rebase (squash): # This is a combination of 30 commits.
+[33m304a90e[m HEAD@{78}: rebase (squash): # This is a combination of 29 commits.
+[33m1e1ffd6[m HEAD@{79}: rebase (squash): # This is a combination of 28 commits.
+[33m93bb01d[m HEAD@{80}: rebase (squash): # This is a combination of 27 commits.
+[33m1bab33e[m HEAD@{81}: rebase (squash): # This is a combination of 26 commits.
+[33ma817597[m HEAD@{82}: rebase (squash): # This is a combination of 25 commits.
+[33m5936938[m HEAD@{83}: rebase (squash): # This is a combination of 24 commits.
+[33mbd5051b[m HEAD@{84}: rebase (squash): # This is a combination of 23 commits.
+[33m76e2715[m HEAD@{85}: rebase (squash): # This is a combination of 22 commits.
+[33m28e8f1c[m HEAD@{86}: rebase (squash): # This is a combination of 21 commits.
+[33m478ac91[m HEAD@{87}: rebase (squash): # This is a combination of 20 commits.
+[33m041cdda[m HEAD@{88}: rebase (squash): # This is a combination of 19 commits.
+[33m53b8df8[m HEAD@{89}: rebase (squash): # This is a combination of 18 commits.
+[33m3a46cd9[m HEAD@{90}: rebase (squash): # This is a combination of 17 commits.
+[33mc664255[m HEAD@{91}: rebase (squash): # This is a combination of 16 commits.
+[33m37ba920[m HEAD@{92}: rebase (squash): # This is a combination of 15 commits.
+[33m0f76539[m HEAD@{93}: rebase (squash): # This is a combination of 14 commits.
+[33mdb5c77a[m HEAD@{94}: rebase (squash): # This is a combination of 13 commits.
+[33m26c3b3c[m HEAD@{95}: rebase (squash): # This is a combination of 12 commits.
+[33md3098b6[m HEAD@{96}: rebase (squash): # This is a combination of 11 commits.
+[33m233149d[m HEAD@{97}: rebase (squash): # This is a combination of 10 commits.
+[33m968e063[m HEAD@{98}: rebase (squash): # This is a combination of 9 commits.
+[33md2c11e9[m HEAD@{99}: rebase (squash): # This is a combination of 8 commits.
+[33mbab2b7e[m HEAD@{100}: rebase (squash): # This is a combination of 7 commits.
+[33m8a8989e[m HEAD@{101}: rebase (squash): # This is a combination of 6 commits.
+[33m15947b5[m HEAD@{102}: rebase (squash): # This is a combination of 5 commits.
+[33m893e52b[m HEAD@{103}: rebase (squash): # This is a combination of 4 commits.
+[33md3fd14c[m HEAD@{104}: rebase (squash): # This is a combination of 3 commits.
+[33m18edd2c[m HEAD@{105}: rebase (squash): # This is a combination of 2 commits.
+[33mccdbac7[m HEAD@{106}: rebase: fast-forward
+[33mfb712f1[m HEAD@{107}: rebase (start): checkout HEAD~32
+[33mebacb2c[m HEAD@{108}: commit: WIP: save changes before rebase
+[33m662a464[m HEAD@{109}: commit: fix:dynmaicaly setting base href based on dev or start v-26
+[33m8241ac2[m HEAD@{110}: commit: fix:dynmaicaly setting base href based on dev or start v-25
+[33m0b38e7f[m HEAD@{111}: commit: fix:dynmaicaly setting base href based on dev or start v-24
+[33m5f39ef0[m HEAD@{112}: commit: fix:dynmaicaly setting base href based on dev or start v-23
+[33m4d957d5[m HEAD@{113}: commit: fix:dynmaicaly setting base href based on dev or start v-22
+[33m84cf1e6[m HEAD@{114}: commit: fix:dynmaicaly setting base href based on dev or start v-21
+[33mda0f1d6[m HEAD@{115}: commit: fix:dynmaicaly setting base href based on dev or start v-20
+[33m28dadf4[m HEAD@{116}: commit: fix:dynmaicaly setting base href based on dev or start v-19
+[33m450fd56[m HEAD@{117}: commit: fix:dynmaicaly setting base href based on dev or start v-18
+[33m1686cd2[m HEAD@{118}: commit: fix:dynmaicaly setting base href based on dev or start v-17
+[33mfe0d740[m HEAD@{119}: commit: fix:dynmaicaly setting base href based on dev or start v-16
+[33mb51900b[m HEAD@{120}: commit: fix:dynmaicaly setting base href based on dev or start v-15
+[33m2cb6fdd[m HEAD@{121}: commit: fix:dynmaicaly setting base href based on dev or start v-14
+[33mab95e9c[m HEAD@{122}: commit: fix:dynmaicaly setting base href based on dev or start v-13
+[33m5fba3c2[m HEAD@{123}: commit: fix:dynmaicaly setting base href based on dev or start v-13
+[33mef57007[m HEAD@{124}: commit: fix:dynmaicaly setting base href based on dev or start v-12
+[33mbcf7763[m HEAD@{125}: commit: fix:dynmaicaly setting base href based on dev or start v-12
+[33m7f40b60[m HEAD@{126}: commit: fix:dynmaicaly setting base href based on dev or start v-11
+[33m7b16c07[m HEAD@{127}: commit: fix:dynmaicaly setting base href based on dev or start v-10
+[33m496f8f8[m HEAD@{128}: commit: fix:dynmaicaly setting base href based on dev or start v-9
+[33m5f046d7[m HEAD@{129}: commit: fix:dynmaicaly setting base href based on dev or start v-9
+[33m817fe7b[m HEAD@{130}: commit: fix:dynmaicaly setting base href based on dev or start v-8
+[33mdde20d9[m HEAD@{131}: commit: fix:dynmaicaly setting base href based on dev or start v-7
+[33m7f33e8d[m HEAD@{132}: commit: fix:dynmaicaly setting base href based on dev or start v-7
+[33m3db5b1e[m HEAD@{133}: commit: fix:dynmaicaly setting base href based on dev or start v-6
+[33m806c9c1[m HEAD@{134}: commit: fix:dynmaicaly setting base href based on dev or start v-6
+[33md0ea26e[m HEAD@{135}: commit: fix:dynmaicaly setting base href based on dev or start v-5
+[33m12028ec[m HEAD@{136}: commit: fix:dynmaicaly setting base href based on dev or start v-4
+[33m2780465[m HEAD@{137}: commit: fix:dynmaicaly setting base href based on dev or start v-3
+[33m39cd771[m HEAD@{138}: commit: fix:dynmaicaly setting base href based on dev or start v-3
+[33mccdbac7[m HEAD@{139}: commit: fix:dynmaicaly setting base href based on dev or start v-2
+[33mfb712f1[m HEAD@{140}: commit: fix:dynmaicaly setting base href based on dev or start
+[33mbae40a5[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{141}: commit: updating trail url for testing
+[33me584082[m HEAD@{142}: commit: fix:replacing config.js usecase instead of .env v-2
+[33mb54adb5[m HEAD@{143}: commit: fix:replacing config.js usecase instead of .env
+[33m9e67cb3[m HEAD@{144}: commit: setting config.js for separation of ENV complete
+[33m8840edd[m HEAD@{145}: commit: fix: dynamically load socket.io and update config.js
+[33ma281726[m HEAD@{146}: commit: complet config.js file and sepration of env file
+[33m7e52c3a[m HEAD@{147}: commit: README.md v.2
+[33mb776e83[m HEAD@{148}: commit: complete README.md
+[33m27449ef[m HEAD@{149}: Branch: renamed refs/heads/master to refs/heads/main
+[33m27449ef[m HEAD@{151}: commit (initial): initial commit for the project complete
